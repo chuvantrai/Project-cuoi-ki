@@ -17,48 +17,34 @@
         <title>Bất Động Sản Nha Trang</title>
         <!-- Favicons -->
         <link href="../img/logo/logo-nha-dat.png" rel="icon">
-        <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+        <link href="img/logo/logo-nha-dat.png" rel="icon">
+<!--        <link href="img/logo/logo-nha-dat.png" rel="apple-touch-icon">-->
         
         <%
         Account account = (Account)session.getAttribute("account");
         
         %>
 
-        
-        <!-- Vendor CSS Files -->
-        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
         <!-- style CSS File -->
-        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
-        
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <!--Main JS File -->
+        <script src="../js/main.js" type="text/javascript"></script>
         
     </head>
     <body>
         <!-- ======= Header ======= -->
         <header>
             <%if(account == null){%>
-                <a href="">Đăng Kí</a>
+                <a href="/Project_He153014/registered">Đăng Kí</a>
                 <a href="/Project_He153014/login">Đăng Nhập</a>
             <%}else{%>
-                <a href="">Đăng Xuất</a> Xin Chào <%=account.getDisplayname()%>
+            <a href="/Project_He153014/logout">Đăng Xuất</a> Xin Chào ${sessionScope.account.displayname}
                 
             <%}%>
         </header>
 
-        <!-- Vendor JS Files -->
-        <script src="assets/vendor/aos/aos.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
 
-        <!--Main JS File -->
-        <script src="../js/main.js" type="text/javascript"></script>
+        
     </body>
 </html>

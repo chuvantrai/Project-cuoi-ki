@@ -5,12 +5,15 @@
  */
 package controller;
 
+import dal.AccountDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -46,9 +49,39 @@ public class RegisteredController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        
+        AccountDBContext db = new AccountDBContext();
+        ArrayList<Account> accounts = db.getAllaccount();
+        
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String displayname = request.getParameter("displayname");
+        
+        Account a = new Account();
+        a.setUsername(username);
+        a.setPassword(password);
+        a.setDisplayname(displayname);
+        boolean t = true;
+        String thongbao="";
+        for (Account acc : accounts) {// check xem acc (username) có trùng chưa
+            if(a.getUsername().equals(acc.getUsername())){
+                t=false;
+            }
+        }
+        
+        if(t){// check xong trả về thông báo
+            db.insertAccount(a);
+            thongbao = "Bạn đã Đăng Ký thành công!";
+            request.setAttribute("thongbao", thongbao);
+            request.getRequestDispatcher("view/login.jsp").forward(request, response);
+        }else{
+            thongbao = "Tên Đăng Nhập đã có người dùng!";
+            request.setAttribute("thongbao", thongbao);
+            request.getRequestDispatcher("view/registered.jsp").forward(request, response);
+        }
+        
         
     }
 

@@ -60,7 +60,10 @@ public class LoginController extends HttpServlet {
         if(account == null)
         {
             request.getSession().setAttribute("account", null);
-            response.getWriter().println("login failed!");
+            String thongbao = "Đăng Nhập thất bại!";
+            request.setAttribute("thongbao", thongbao);
+            request.getRequestDispatcher("view/login.jsp").forward(request, response);
+//            response.getWriter().println("login failed!");
         }
         else
         {

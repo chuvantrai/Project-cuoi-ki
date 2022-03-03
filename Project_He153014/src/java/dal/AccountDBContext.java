@@ -7,6 +7,7 @@ package dal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Account;
@@ -80,4 +81,27 @@ public class AccountDBContext extends DBContext {
             }
         }
     }
+    
+    public ArrayList<Account> getAllaccount()
+    {
+        ArrayList<Account> accounts = new ArrayList<>();
+        try {
+            String sql = "SELECT UserID, Username, Password, Displayname FROM dbo.Account";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next())
+            {
+                Account d = new Account();
+                d.setUserid(rs.getInt("UserID"));
+                d.setUsername(rs.getString("Username"));
+                d.setPassword(rs.getString("Password"));
+                d.setDisplayname(rs.getString("Displayname"));
+                accounts.add(d);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return accounts;
+    }
+    
 }
