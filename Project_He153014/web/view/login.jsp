@@ -49,12 +49,13 @@
                     </button>
                   </div>
                   </form>
+                  <form action="home" method="GET"> 
                   <div class="d-grid">
-                    <button class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit" onclick="DN1()">
+                    <button class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
                        Về trang chủ
                     </button>
                   </div>
-                  
+                  </form>
               </div>
             </div>
           </div>

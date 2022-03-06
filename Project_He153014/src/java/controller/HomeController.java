@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dal.ThongtinbdsDBContext;
 import dal.TintucDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Thongtinbds;
 import model.Tintuc;
 
 /**
@@ -36,10 +38,17 @@ public class HomeController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         
         TintucDBContext db = new TintucDBContext();
-        ArrayList<Tintuc> tintucs = db.getAllTintuc();
+        ArrayList<Tintuc> tintucs = db.getAllTintuc();  
+        request.getSession().setAttribute("tintucs", tintucs);// list all tintuc
         
-        request.getSession().setAttribute("tintucs", tintucs);
-            
+        ThongtinbdsDBContext dbtt = new ThongtinbdsDBContext();
+        ArrayList<Thongtinbds> thongtinbds = dbtt.getAllthongtinbds();  
+        request.getSession().setAttribute("thongtinbds", thongtinbds); // lít all thongtinbds
+        int count= dbtt.count();
+        int pagesize = 3;
+        int totalpage = (count%pagesize==0)?(count/pagesize):(count / pagesize)+1;
+        request.setAttribute("totalpage", totalpage);
+          
         request.getRequestDispatcher("view/home.jsp").forward(request, response);
     }
 

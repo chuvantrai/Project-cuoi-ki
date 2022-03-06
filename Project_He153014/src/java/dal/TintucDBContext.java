@@ -18,7 +18,7 @@ import model.Tintuc;
  * @author 03623
  */
 public class TintucDBContext extends DBContext{
-    public ArrayList<Tintuc> getAllTintuc()
+    public ArrayList<Tintuc> getAllTintuc() //ngày gần nhất
     {
         ArrayList<Tintuc> tintucs = new ArrayList<>();
         try {
@@ -40,5 +40,7 @@ public class TintucDBContext extends DBContext{
         }
         return tintucs;
     }
+    
+
     
 }
