@@ -14,15 +14,25 @@ public class Account {
     private String username;
     private String password;
     private String displayname;
+    private Vaitro vaitro;
+    private Long sdt;
 
-    public Account() {
-    }
-
-    public Account(int userid, String username, String password, String displayname) {
+    public Account(int userid, String username, String password, String displayname, Vaitro vaitro, Long sdt) {
         this.userid = userid;
         this.username = username;
         this.password = password;
         this.displayname = displayname;
+        this.vaitro = vaitro;
+        this.sdt = sdt;
+    }
+
+
+    public Long getSdt() {
+        return sdt;
+    }
+
+    public void setSdt(Long sdt) {
+        this.sdt = sdt;
     }
 
     
@@ -59,7 +69,16 @@ public class Account {
         this.displayname = displayname;
     }
     
-    
+       public Vaitro getVaitro() {
+        return vaitro;
+    }
+
+    public void setVaitro(Vaitro vaitro) {
+        this.vaitro = vaitro;
+    }
+
+    public Account() {
+    } 
 
     
     

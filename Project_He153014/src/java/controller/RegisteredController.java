@@ -58,11 +58,13 @@ public class RegisteredController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String displayname = request.getParameter("displayname");
+        String sdt = request.getParameter("sdt");
         
         Account a = new Account();
         a.setUsername(username);
         a.setPassword(password);
         a.setDisplayname(displayname);
+        a.setSdt(Long.parseLong(sdt));
         boolean t = true;
         String thongbao="";
         for (Account acc : accounts) {// check xem acc (username) có trùng chưa

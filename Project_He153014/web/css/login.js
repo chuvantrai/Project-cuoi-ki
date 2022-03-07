@@ -8,6 +8,7 @@ function checkForm(){
     var username= document.getElementsByTagName('input')[0].value;
     var password= document.getElementsByTagName('input')[1].value;
     var displayname= document.getElementsByTagName('input')[2].value;
+    var sdt= document.getElementsByTagName('input')[3].value;
     if(username==''||username.length <=4){
         alert('Hãy nhập đúng theo yêu cầu!');
         return false;
@@ -18,6 +19,11 @@ function checkForm(){
     }
     if(displayname==''||displayname.length <=4){
         alert('Hãy nhập đúng theo yêu cầu!');
+        return false;
+    }
+
+    if(sdt==''||sdt<1000000000||sdt>9999999999){
+        alert('Hãy nhập đúntheo yêu cầu!'+sdt/2);
         return false;
     }
 

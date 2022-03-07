@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/dal/TintucDBContext.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/home.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/css/style_home.css</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/css/login.js</file>
             <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/controller/HomeController.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/login.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/model/Vaitro.java</file>
             <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/dal/AccountDBContext.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/dal/DBContext.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/controller/BaseAuthController.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/dal/ThongtinbdsDBContext.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/controller/LoginController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/model/Account.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/controller/LogoutController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/controller/RegisteredController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/registered.jsp</file>
             <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/model/Thongtinbds.java</file>
         </group>
     </open-files>

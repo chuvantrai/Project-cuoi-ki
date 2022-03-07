@@ -15,7 +15,7 @@
         <link href="img/logo/logo-nha-dat.png" rel="icon">
         
         <link href="css/style_login.css" rel="stylesheet" type="text/css"/>
-        <script src="js/login.js" type="text/javascript"></script>
+        <script src="css/login.js" type="text/javascript"></script>
         <!-- css bootstrap5 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -47,15 +47,20 @@
                   </div>
                     <p class="thongbao2">(ít nhất 5 kí tự và tối đa 10 kí tự)</p>
                   <div class="form-floating mb-3">
-                    <input type="text" name="password" class="form-control dk2" id="floatingPassword" placeholder="Password">
+                    <input type="text" name="password" class="form-control dk2" id="floatingPassword" placeholder="Password" maxlength="10">
                     <label for="floatingInput">Mật khẩu</label>
                   </div>
                     <p class="thongbao2">(ít nhất 5 kí tự và tối đa 10 kí tự)</p>
                   <div class="form-floating mb-3">
-                    <input type="text" name="displayname" class="form-control dk3" id="floatingInput" placeholder="Displayname">
+                    <input type="text" name="displayname" class="form-control dk3" id="floatingInput" placeholder="Displayname"maxlength="16">
                     <label for="floatingInput">Tên người dùng</label>
                   </div>
                     <p class="thongbao2">(ít nhất 5 kí tự và tối đa 16 kí tự)</p>
+                  <div class="form-floating mb-3">
+                      <input type="number" name="sdt" class="form-control dk4" id="floatingInput" placeholder="Sdt" maxlength="10">
+                    <label for="floatingInput">Số điện thoại</label>
+                  </div>
+                    <p class="thongbao2">(nhập vào 10 chữ số)</p>
                   <div class="d-grid">
                         <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Đăng Ký</button>
                   </div>
@@ -68,12 +73,13 @@
                     </button>
                   </div>
                   </form>
+                  <form action="home"> 
                   <div class="d-grid">
                     <button class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit" onclick="DN1()">
                        Về trang chủ
                     </button>
                   </div>
-                  
+                  </form>
               </div>
             </div>
           </div>

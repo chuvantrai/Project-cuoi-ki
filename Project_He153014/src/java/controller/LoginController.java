@@ -68,8 +68,8 @@ public class LoginController extends HttpServlet {
         else
         {
             request.getSession().setAttribute("account", account);
-            
-            request.getRequestDispatcher("view/home.jsp").forward(request, response);
+            response.sendRedirect("home");
+//            request.getRequestDispatcher("view/home.jsp").forward(request, response);
         }
     }
 
