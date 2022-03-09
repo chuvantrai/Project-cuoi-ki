@@ -8,6 +8,20 @@ and open the template in the editor.
     Author     : 03623
 */
 
+/* footer */
+footer{
+    background-color: #1c2331;
+    color: #f7f7f7;
+}
+.footer-copyright{
+    background-color: #161c27;
+}
+.ket1{
+    padding-top: 20px;
+}
+/* footer */
+
+/* nav */
 .carousel img{
     max-width: 100%;
     height: 192px;
@@ -15,6 +29,8 @@ and open the template in the editor.
 .card{
     height: 400px;
 }
+/* nav */
+
 section{
     padding: 0px;
 }
@@ -59,5 +75,36 @@ section{
 }
 .news3 h5{
     color: black;
+}
+.thanhkv{
+    padding-top: 13px;
+}
+.gtt1 img{
+    width: 90%;
+    padding-top: 15px;
+    padding-left: 35px;
+}
+.gtt1{
+    width: 101%;
+}
+.solution-content{
+    padding-left: 35px;
+}
+.gtt12{
+    width: 100%;
+}
+.gg1{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.dv0{
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+.dv1{
+    font-size: 21px;
+}
+.dv2{
+    font-size: 21px;
 }
 

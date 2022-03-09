@@ -90,17 +90,59 @@ public class ThongtinbdsDBContext extends DBContext{
         }
         return -1;
     }
-    
-    public static void main(String[] args){
-            ThongtinbdsDBContext db = new ThongtinbdsDBContext();
-            ArrayList<Thongtinbds> acc = db.getAllthongtinbds();
-//            for (Thongtinbds a : acc) {
-//                System.out.println(a.getIdbds());
-//                System.out.println(a.getTenbds());
-//                System.out.println(a.getRowindex());
-//                System.out.println(a.getNgay());
-//            }
-            int i= db.count();
-            System.out.println(i);
+    public int countloai(String loai) {
+        try {
+            String sql = "SELECT COUNT(*) as Total FROM dbo.ThongTinBDS\n" +
+                            "WHERE Loaibds= ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, loai);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("Total");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
     }
+    
+    public ArrayList<Thongtinbds> getAllthongtinbdstheoloai(String loaibds ){
+        ArrayList<Thongtinbds> thongtinbds = new ArrayList<>();
+        try {
+            String sql = "SELECT IDbds,Tenbds,Thongtinbds,Loaibds,Khuvucbds,Giachu,Giaso,Ngay, (ROW_NUMBER() OVER (ORDER BY IDbds ASC)) as row_index FROM dbo.ThongTinBDS\n" +
+                            "WHERE Loaibds= ?\n" +
+                            "ORDER BY IDbds";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, loaibds);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next())
+            {
+                Thongtinbds t = new Thongtinbds();
+                t.setIdbds(rs.getInt("IDbds"));
+                t.setTenbds(rs.getString("Tenbds"));
+                t.setThongtinbds(rs.getString("Thongtinbds"));
+                t.setLoaibds(rs.getString("Loaibds"));
+                t.setKhuvucbds(rs.getString("Khuvucbds"));
+                t.setGiachu(rs.getString("Giachu"));
+                t.setGiaso(rs.getLong("Giaso"));
+                t.setNgay(rs.getDate("ngay"));
+                t.setRowindex(rs.getInt("row_index"));
+                thongtinbds.add(t);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return thongtinbds;
+    }
+    
+//     public static void main(String[] args){
+//            ThongtinbdsDBContext db = new ThongtinbdsDBContext();
+//            ArrayList<Thongtinbds> acc = db.getAllthongtinbdstheoloai("#canho");
+////            for (Thongtinbds a : acc) {
+////                System.out.println(a.getTenbds());
+////                System.out.println(a.getLoaibds());
+////                System.out.println(a.getNgay());
+////            }
+//            System.out.println(db.countloai("#canho"));
+//    }
 }

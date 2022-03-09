@@ -41,13 +41,43 @@ public class HomeController extends HttpServlet {
         ArrayList<Tintuc> tintucs = db.getAllTintuc();  
         request.getSession().setAttribute("tintucs", tintucs);// list all tintuc
         
+        // lít all thongtinbds
         ThongtinbdsDBContext dbtt = new ThongtinbdsDBContext();
         ArrayList<Thongtinbds> thongtinbds = dbtt.getAllthongtinbds();  
-        request.getSession().setAttribute("thongtinbds", thongtinbds); // lít all thongtinbds
+        request.getSession().setAttribute("thongtinbds", thongtinbds); 
         int count= dbtt.count();
         int pagesize = 3;
         int totalpage = (count%pagesize==0)?(count/pagesize):(count / pagesize)+1;
         request.setAttribute("totalpage", totalpage);
+        
+        // lít thongtinbds loại #canho
+        ArrayList<Thongtinbds> thongtinbdscanho = dbtt.getAllthongtinbdstheoloai("#canho");  
+        request.getSession().setAttribute("thongtinbdscanho", thongtinbdscanho); 
+        int countcanho= dbtt.countloai("#canho");
+        int totalpagecanho = (countcanho%pagesize==0)?(countcanho/pagesize):(countcanho / pagesize)+1;
+        request.setAttribute("totalpagecanho", totalpagecanho);
+        
+        // lít thongtinbds loại #datnen
+        ArrayList<Thongtinbds> thongtinbdsdatnen = dbtt.getAllthongtinbdstheoloai("#datnen");  
+        request.getSession().setAttribute("thongtinbdsdatnen", thongtinbdsdatnen); 
+        int countdatnen= dbtt.countloai("#datnen");
+        int totalpagedatnen = (countdatnen%pagesize==0)?(countdatnen/pagesize):(countdatnen / pagesize)+1;
+        request.setAttribute("totalpagedatnen", totalpagedatnen);
+                
+        // lít thongtinbds loại #nhapho
+        ArrayList<Thongtinbds> thongtinbdsnhapho = dbtt.getAllthongtinbdstheoloai("#nhapho");  
+        request.getSession().setAttribute("thongtinbdsnhapho", thongtinbdsnhapho); 
+        int countnhapho= dbtt.countloai("#nhapho");
+        int totalpagenhapho = (countnhapho%pagesize==0)?(countnhapho/pagesize):(countnhapho / pagesize)+1;
+        request.setAttribute("totalpagenhapho", totalpagenhapho);
+        
+        // lít thongtinbds loại #bietthu
+        ArrayList<Thongtinbds> thongtinbdsbietthu = dbtt.getAllthongtinbdstheoloai("#bietthu");  
+        request.getSession().setAttribute("thongtinbdsbietthu", thongtinbdsbietthu); 
+        int countbietthu= dbtt.countloai("#bietthu");
+        int totalpagebietthu = (countbietthu%pagesize==0)?(countbietthu/pagesize):(countbietthu / pagesize)+1;
+        request.setAttribute("totalpagebietthu", totalpagebietthu);
+        
           
         request.getRequestDispatcher("view/home.jsp").forward(request, response);
     }
