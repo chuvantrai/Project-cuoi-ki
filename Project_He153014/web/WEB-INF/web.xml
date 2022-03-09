@@ -20,6 +20,10 @@
         <servlet-name>GioithieuController</servlet-name>
         <servlet-class>GioithieuController.GioithieuController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetailtintucController</servlet-name>
+        <servlet-class>TintucController.DetailtintucController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>GioithieuController</servlet-name>
         <url-pattern>/gioithieu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailtintucController</servlet-name>
+        <url-pattern>/tintuc/detail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

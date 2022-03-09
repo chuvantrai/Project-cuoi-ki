@@ -17,12 +17,12 @@
         
         <%
         
-        ArrayList<Tintuc> tintucs = (ArrayList<Tintuc>)session.getAttribute("tintucs");
-        ArrayList<Thongtinbds> thongtinbds = (ArrayList<Thongtinbds>)session.getAttribute("thongtinbds");
-        ArrayList<Thongtinbds> thongtinbdsdatnen = (ArrayList<Thongtinbds>)session.getAttribute("thongtinbdsdatnen");
-        ArrayList<Thongtinbds> thongtinbdscanho = (ArrayList<Thongtinbds>)session.getAttribute("thongtinbdscanho");
-        ArrayList<Thongtinbds> thongtinbdsnhapho = (ArrayList<Thongtinbds>)session.getAttribute("thongtinbdsnhapho");
-        ArrayList<Thongtinbds> thongtinbdsbietthu = (ArrayList<Thongtinbds>)session.getAttribute("thongtinbdsbietthu");
+        ArrayList<Tintuc> tintucs = (ArrayList<Tintuc>)request.getAttribute("tintucs");
+        ArrayList<Thongtinbds> thongtinbds = (ArrayList<Thongtinbds>)request.getAttribute("thongtinbds");
+        ArrayList<Thongtinbds> thongtinbdsdatnen = (ArrayList<Thongtinbds>)request.getAttribute("thongtinbdsdatnen");
+        ArrayList<Thongtinbds> thongtinbdscanho = (ArrayList<Thongtinbds>)request.getAttribute("thongtinbdscanho");
+        ArrayList<Thongtinbds> thongtinbdsnhapho = (ArrayList<Thongtinbds>)request.getAttribute("thongtinbdsnhapho");
+        ArrayList<Thongtinbds> thongtinbdsbietthu = (ArrayList<Thongtinbds>)request.getAttribute("thongtinbdsbietthu");
         int index1= 0;
         Integer totalpage = (Integer)request.getAttribute("totalpage");
         Integer totalpagedatnen = (Integer)request.getAttribute("totalpagedatnen");
@@ -56,27 +56,26 @@
            <%for (Tintuc t : tintucs) {%>
                 <%if(index1==0){ index1+=1;%>
                 <div class="carousel-inner">
-                    <img src="img/logo/nhatrang2.jpg" class="d-block w-100" alt="...">
+                    <img src="img/tintuc/<%=t.getImgavar()%>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <a href=""><h5><%=t.getTieude()%></h5></a>
+                        <a href="tintuc/detail?tintucid=<%=t.getId()%>"><h5><%=t.getTieude()%></h5></a>
                         <p><ion-icon name="calendar-outline"></ion-icon><%=t.getNgay()%></p>
                     </div>
                 </div>
                 <%}%>
           <%}%> 
           </div>
-
       <div class="col-6 mb-3 news3">
         <%for (Tintuc t : tintucs) { %>
             <%if(index1>1 && index1<=3){ %>
         <div class="card mb-3" style="max-width: 680px;">
           <div class="row no-gutters">
             <div class="card-body col-md-4 ">
-                <img class="new10" src="img/logo/nhatrang2.jpg" alt="...">
+                <img class="new10" src="img/tintuc/<%=t.getImgavar()%>" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <a href=""><h5 class="card-title"><%=t.getTieude()%></h5></a>
+                <a href="tintuc/detail?tintucid=<%=t.getId()%>"><h5 class="card-title"><%=t.getTieude()%></h5></a>
                 <p class="card-text"><ion-icon name="calendar-outline"></ion-icon><small class="text-muted"><%=t.getNgay()%></small></p>
               </div>
             </div>
@@ -90,7 +89,7 @@
       
     </div>
   
-            
+
 <!-- thông tin Căn hộ     -->
         <section class="pt-3 section1">
         <div class="container">
@@ -118,7 +117,7 @@
                                                 <div class="col-md-4 mb-3" >
                                                     <a href="" class="card-link list-group-item-action">
                                                         <div class="card ">
-                                                            <img class="img-fluid" alt="100%x280" src="img/logo/nhatrang2.jpg">
+                                                            <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
                                                                 <h4 class="card-title" ><%=t.getTenbds()%></h4>
@@ -166,7 +165,7 @@
                                                 <div class="col-md-4 mb-3" >
                                                     <a href="" class="card-link list-group-item-action">
                                                         <div class="card ">
-                                                            <img class="img-fluid" alt="100%x280" src="img/logo/nhatrang2.jpg">
+                                                            <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
@@ -215,7 +214,7 @@
                                                 <div class="col-md-4 mb-3" >
                                                     <a href="" class="card-link list-group-item-action">
                                                         <div class="card ">
-                                                            <img class="img-fluid" alt="100%x280" src="img/logo/nhatrang2.jpg">
+                                                            <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
                                                                 <h4 class="card-title" ><%=t.getTenbds()%></h4>
@@ -263,7 +262,7 @@
                                                 <div class="col-md-4 mb-3" >
                                                     <a href="" class="card-link list-group-item-action">
                                                         <div class="card ">
-                                                            <img class="img-fluid" alt="100%x280" src="img/logo/nhatrang2.jpg">
+                                                            <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
                                                                 <h4 class="card-title" ><%=t.getTenbds()%></h4>

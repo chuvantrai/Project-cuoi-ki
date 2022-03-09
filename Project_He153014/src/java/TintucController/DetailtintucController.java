@@ -3,23 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GioithieuController;
+package TintucController;
 
-import dal.GioithieunvDBContext;
+import dal.TintucDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Gioithieunv;
+import model.Tintuc;
 
 /**
  *
  * @author 03623
  */
-public class GioithieuController extends HttpServlet {
+public class DetailtintucController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,12 +34,11 @@ public class GioithieuController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         
-        GioithieunvDBContext db = new GioithieunvDBContext();
-        ArrayList<Gioithieunv> gioithieunvs = db.getAllgioithieu();
-        
-        request.setAttribute("gioithieunvs", gioithieunvs);
-        
-        request.getRequestDispatcher("view/gioithieu.jsp").forward(request, response);
+        TintucDBContext db = new TintucDBContext();
+        int bdsid = Integer.parseInt(request.getParameter("tintucid"));
+        Tintuc tintuc = db.getTintuctheoid(bdsid);
+        request.setAttribute("tintuc", tintuc);
+        request.getRequestDispatcher("../view/detailtintuc.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

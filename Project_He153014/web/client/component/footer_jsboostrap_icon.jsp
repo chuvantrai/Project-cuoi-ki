@@ -49,7 +49,7 @@
         <h6 class="text-uppercase font-weight-bold">Thông tin</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a href="#!">Giới thiệu</a>
+          <a href="/Project_He153014/gioithieu">Giới thiệu</a>
         </p>
         <p>
           <a href="#!">Nhà phố</a>
@@ -100,7 +100,8 @@
            <a href="https://www.facebook.com/profile.php?id=100038788150960"><i class="bi bi-facebook"></i>Facebook</a></p>
         <p>
           <i class="bi bi-clock-fill"></i> 24/24 (T2-CN)</p>
-
+        <p>
+          <a href="https://www.youtube.com/channel/UC5ou6P4Up2d1Vj_ePBmU1Qg/videos"><i class="bi bi-youtube"></i>Kênh Youtube</a></p>
       </div>
       <!-- Grid column -->
 

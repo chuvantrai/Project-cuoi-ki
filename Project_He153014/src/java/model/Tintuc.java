@@ -16,17 +16,29 @@ public class Tintuc {
     private String tieude;
     private String noidung;
     private Date ngay;
+    private String imgavar;
 
     public Tintuc() {
     }
 
-    public Tintuc(int id, String tieude, String noidung, Date ngay) {
+    public Tintuc(int id, String tieude, String noidung, Date ngay, String imgavar) {
         this.id = id;
         this.tieude = tieude;
         this.noidung = noidung;
         this.ngay = ngay;
+        this.imgavar = imgavar;
     }
 
+    
+    public String getImgavar() {
+        return imgavar;
+    }
+
+    public void setImgavar(String imgavar) {
+        this.imgavar = imgavar;
+    }
+    
+    
     public int getId() {
         return id;
     }

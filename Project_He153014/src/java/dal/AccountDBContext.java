@@ -128,15 +128,15 @@ public class AccountDBContext extends DBContext {
         return accounts;
     }
     
-    public static void main(String[] args){
-
-            AccountDBContext db = new AccountDBContext();
-            ArrayList<Account> acc = db.getAllaccount();
-            for (Account a : acc) {
-                System.out.println(a.getDisplayname());
-                System.out.println(a.getSdt());
-                System.out.println(a.getVaitro().getVaitro());
-            }
-    }
+//    public static void main(String[] args){
+//
+//            AccountDBContext db = new AccountDBContext();
+//            ArrayList<Account> acc = db.getAllaccount();
+//            for (Account a : acc) {
+//                System.out.println(a.getDisplayname());
+//                System.out.println(a.getSdt());
+//                System.out.println(a.getVaitro().getVaitro());
+//            }
+//    }
     
 }

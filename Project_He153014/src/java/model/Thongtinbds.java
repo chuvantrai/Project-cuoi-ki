@@ -21,12 +21,13 @@ public class Thongtinbds {
     private Long giaso;
     private Date ngay;
     private int rowindex;
+    private String imgavar;
     
     public Thongtinbds() {
     }
 
-    public Thongtinbds( String tenbds, String thongtinbds, String loaibds, String khuvucbds, String giachu, Long giaso, Date ngay) {
-        
+    public Thongtinbds(int idbds, String tenbds, String thongtinbds, String loaibds, String khuvucbds, String giachu, Long giaso, Date ngay, int rowindex, String imgavar) {
+        this.idbds = idbds;
         this.tenbds = tenbds;
         this.thongtinbds = thongtinbds;
         this.loaibds = loaibds;
@@ -35,6 +36,17 @@ public class Thongtinbds {
         this.giaso = giaso;
         this.ngay = ngay;
         this.rowindex = rowindex;
+        this.imgavar = imgavar;
+    }
+
+
+
+    public String getImgavar() {
+        return imgavar;
+    }
+
+    public void setImgavar(String imgavar) {
+        this.imgavar = imgavar;
     }
 
     public int getRowindex() {

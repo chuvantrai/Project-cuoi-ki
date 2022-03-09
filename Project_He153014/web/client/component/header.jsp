@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- navbar-->
       <nav  class="navbar navbar-expand-lg navbar-light" style="background-color:#e3f2fd;">
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="#">CNV</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -22,7 +22,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="/Project_He153014/home"
               >Trang Chủ <span class="sr-only">(current)</span></a
             >
           </li>
