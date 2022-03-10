@@ -23,5 +23,13 @@
         <%@page import="model.Account"%>
         <%Account account = (Account)session.getAttribute("account");%>
         
+        <!-- font chữ -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+        body{
+        font-family: 'Cabin', sans-serif;
+        }
+    </style>
+        
 
         

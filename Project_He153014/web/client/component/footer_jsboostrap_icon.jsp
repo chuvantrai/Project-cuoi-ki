@@ -95,7 +95,7 @@
         <p>
           <i class="bi bi-telephone-fill"></i> 𝟎𝟖𝟕𝟗.𝟖𝟒𝟗.𝟖𝟖𝟖</p>
         <p>
-          <i class="bi bi-envelope-fill"></i> @gmail.com</p>
+          <i class="bi bi-envelope-fill"></i> chuvanngoc1@gmail.com</p>
         <p>
            <a href="https://www.facebook.com/profile.php?id=100038788150960"><i class="bi bi-facebook"></i>Facebook</a></p>
         <p>

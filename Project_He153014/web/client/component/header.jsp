@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- navbar-->
       <nav  class="navbar navbar-expand-lg navbar-light" style="background-color:#e3f2fd;">
-      <a class="navbar-brand" href="#">CNV</a>
+      <a class="navbar-brand" href="/Project_He153014/home">CNV</a>
       <button
         class="navbar-toggler"
         type="button"

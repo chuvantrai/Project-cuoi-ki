@@ -8,6 +8,7 @@ package TintucController;
 import dal.TintucDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +39,9 @@ public class DetailtintucController extends HttpServlet {
         int bdsid = Integer.parseInt(request.getParameter("tintucid"));
         Tintuc tintuc = db.getTintuctheoid(bdsid);
         request.setAttribute("tintuc", tintuc);
+        
+        ArrayList<Tintuc> tintucs = db.getAllTintuc();  
+        request.setAttribute("tintucs", tintucs);// list all tintuc
         request.getRequestDispatcher("../view/detailtintuc.jsp").forward(request, response);
     }
 
