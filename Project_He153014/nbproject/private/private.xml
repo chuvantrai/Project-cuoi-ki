@@ -2,6 +2,37 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/login.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/controller/HomeController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/css/style_home.css</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/client/component/head.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/gioithieu.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/TintucController/DetailtintucController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/client/component/header.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/model/Gioithieunv.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/js/main.js</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/dal/TintucDBContext.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/ThongtinbdsController/DetailThongtinbdsController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/js/alltintuc.js</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/dal/ThongtinbdsDBContext.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/css/login.js</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/css/allthongtinbds.css</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/home.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/TintucController/AlltintucController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/client/component/footer_jsboostrap_icon.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/controller/RegisteredController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/model/Imgbds.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/allthongtinbds.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/model/Tintuc.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/ThongtinbdsController/AllthongtinbdsController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/detailthongtinbds.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/GioithieuController/GioithieuController.java</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/css/style_login.css</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/alltintuc.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/detailtintuc.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/web/view/registered.jsp</file>
+            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Project-cuoi-ki/Project_He153014/src/java/model/Thongtinbds.java</file>
+        </group>
     </open-files>
 </project-private>

@@ -84,7 +84,7 @@
         <%}
              index1+=1;
             }%>
-            <a href="">Tất cả</a>
+            <a href="tintuc/tatca">Tất cả</a>
       </div>
       
     </div>
@@ -115,13 +115,13 @@
                                     <%for (Thongtinbds t : thongtinbdscanho) {
                                             if(t.getRowindex() >= ((i -1)*3 + 1) && t.getRowindex() <= i*3){%>
                                                 <div class="col-md-4 mb-3" >
-                                                    <a href="" class="card-link list-group-item-action">
+                                                    <a href="thongtinbds/detail?thongtinbdsid=<%=t.getIdbds()%>" class="card-link list-group-item-action">
                                                         <div class="card ">
                                                             <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
                                                                 <h4 class="card-title" ><%=t.getTenbds()%></h4>
-                                                                <p class="card-text">Giá: <%=t.getGiachu()%></p>
+                                                                <p class="card-text">Giá: <%=t.getGiachu()%>   <i class="bi bi-cash-coin" style="color: #49be25"></i></p>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -163,14 +163,14 @@
                                     <%for (Thongtinbds t : thongtinbdsdatnen) {
                                             if(t.getRowindex() >= ((i -1)*3 + 1) && t.getRowindex() <= i*3){%>
                                                 <div class="col-md-4 mb-3" >
-                                                    <a href="" class="card-link list-group-item-action">
+                                                    <a href="thongtinbds/detail?thongtinbdsid=<%=t.getIdbds()%>" class="card-link list-group-item-action">
                                                         <div class="card ">
                                                             <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
                                                                 <h4 class="card-title" ><%=t.getTenbds()%></h4>
-                                                                <p class="card-text">Giá: <%=t.getGiachu()%></p>
+                                                                <p class="card-text">Giá: <%=t.getGiachu()%>    <i class="bi bi-cash-coin" style="color: #49be25"></i></p>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -212,13 +212,13 @@
                                     <%for (Thongtinbds t : thongtinbdsnhapho) {
                                             if(t.getRowindex() >= ((i -1)*3 + 1) && t.getRowindex() <= i*3){%>
                                                 <div class="col-md-4 mb-3" >
-                                                    <a href="" class="card-link list-group-item-action">
+                                                    <a href="thongtinbds/detail?thongtinbdsid=<%=t.getIdbds()%>" class="card-link list-group-item-action">
                                                         <div class="card ">
                                                             <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
                                                                 <h4 class="card-title" ><%=t.getTenbds()%></h4>
-                                                                <p class="card-text">Giá: <%=t.getGiachu()%></p>
+                                                                <p class="card-text">Giá: <%=t.getGiachu()%>     <i class="bi bi-cash-coin" style="color: #49be25"></i></p>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -260,13 +260,13 @@
                                     <%for (Thongtinbds t : thongtinbdsbietthu) {
                                             if(t.getRowindex() >= ((i -1)*3 + 1) && t.getRowindex() <= i*3){%>
                                                 <div class="col-md-4 mb-3" >
-                                                    <a href="" class="card-link list-group-item-action">
+                                                    <a href="thongtinbds/detail?thongtinbdsid=<%=t.getIdbds()%>" class="card-link list-group-item-action">
                                                         <div class="card ">
                                                             <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
                                                                 <h4 class="card-title" ><%=t.getTenbds()%></h4>
-                                                                <p class="card-text">Giá: <%=t.getGiachu()%></p>
+                                                                <p class="card-text">Giá: <%=t.getGiachu()%>     <i class="bi bi-cash-coin" style="color: #49be25"></i></p>
                                                             </div>
                                                         </div>
                                                     </a>

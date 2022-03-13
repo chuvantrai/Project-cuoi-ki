@@ -64,7 +64,7 @@
           <a href="#!">Căn hộ</a>
         </p>
         <p>
-          <a href="#!">Tin tức</a>
+          <a href="../../Project_He153014/tintuc/tatca">Tin tức</a>
         </p>
         
       </div>

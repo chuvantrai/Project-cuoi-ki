@@ -30,7 +30,7 @@
               <a class="nav-link" href="/Project_He153014/gioithieu">Giới Thiệu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tin Tức</a>
+            <a class="nav-link" href="../../Project_He153014/tintuc/tatca">Tin Tức</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Tư Vấn/Hỗ Trợ</a>
