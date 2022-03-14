@@ -98,7 +98,7 @@
                     <h3 class="mb-3">Căn hộ </h3> 
                 </div>
                 <div class="col-6 text-right thanhkv alert-primary">
-                    <a href="">(tất cả)</a>
+                    <a href="thongtinbds/tatca?Loaibds=%23canho&thutu=moinhat&Khuvucbds=&locGia=">(tất cả)</a>
                     <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators12" role="button" data-slide="prev">
                       <ion-icon name="chevron-back-sharp"></ion-icon>
                     </a>
@@ -146,7 +146,7 @@
                   <h3 class="mb-3">Đất nền </h3>
                 </div>
                 <div class="col-6 text-right thanhkv alert-primary">
-                    <a href="">(tất cả)</a>
+                    <a href="thongtinbds/tatca?Loaibds=%23datnen&thutu=moinhat&Khuvucbds=&locGia=">(tất cả)</a>
                     <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
                       <ion-icon name="chevron-back-sharp"></ion-icon>
                     </a>
@@ -195,7 +195,7 @@
                   <h3 class="mb-3">Nhà phố </h3>
                 </div>
                 <div class="col-6 text-right thanhkv alert-primary">
-                    <a href="">(tất cả)</a>
+                    <a href="thongtinbds/tatca?Loaibds=%23nhapho&thutu=moinhat&Khuvucbds=&locGia=">(tất cả)</a>
                     <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators13" role="button" data-slide="prev">
                       <ion-icon name="chevron-back-sharp"></ion-icon>
                     </a>
@@ -243,7 +243,7 @@
                   <h3 class="mb-3">Biệt thự </h3>
                 </div>
                 <div class="col-6 text-right thanhkv alert-primary">
-                    <a href="">(tất cả)</a>
+                    <a href="thongtinbds/tatca?Loaibds=%23bietthu&thutu=moinhat&Khuvucbds=&locGia=">(tất cả)</a>
                     <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators14" role="button" data-slide="prev">
                       <ion-icon name="chevron-back-sharp"></ion-icon>
                     </a>

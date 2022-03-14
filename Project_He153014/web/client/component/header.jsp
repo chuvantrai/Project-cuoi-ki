@@ -33,7 +33,7 @@
             <a class="nav-link" href="../../Project_He153014/tintuc/tatca">Tin Tức</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tư Vấn/Hỗ Trợ</a>
+            <a class="nav-link" href="../../Project_He153014/yeucau">Tư Vấn/Hỗ Trợ</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -47,15 +47,14 @@
               Khu Vực BĐS
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Tất cả</a>
-              <a class="dropdown-item" href="#">Can Lâm</a>
-              <a class="dropdown-item" href="#">Diên Khánh</a>
-              <a class="dropdown-item" href="#">Khánh Vĩnh</a>
-              <a class="dropdown-item" href="#">Nha Trang</a>
-              <a class="dropdown-item" href="#">Cam Rang</a>
-              <a class="dropdown-item" href="#">Khánh Sơn</a>
-              <a class="dropdown-item" href="#">Ninh Hòa</a>
-              <a class="dropdown-item" href="#">Vạn Ninh</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=&locGia=">Tất cả</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=%23canlam&locGia=">Can Lâm</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=%23diemkhanh&locGia=">Diên Khánh</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=%23khanhvinh&locGia=">Khánh Vĩnh</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=%23nhatrang&locGia=">Nha Trang</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=%23camrang&locGia=">Cam Rang</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=%23ninhhoa&locGia=">Ninh Hòa</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=%23vanninh&locGia=">Vạn Ninh</a>
               <a class="dropdown-item" href="#">Khu Vực Khác</a>
             </div>
           </li>
@@ -71,11 +70,29 @@
               Loại BĐS
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Tất cả</a>
-              <a class="dropdown-item" href="#">Căn hộ</a>
-              <a class="dropdown-item" href="#">Đất nền</a>
-              <a class="dropdown-item" href="#">Nhà Phố</a>
-              <a class="dropdown-item" href="#">Biệt thự</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=&locGia=">Tất cả</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23canho&thutu=moinhat&Khuvucbds=&locGia=">Căn hộ</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23datnen&thutu=moinhat&Khuvucbds=&locGia=">Đất nền</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23nhapho&thutu=moinhat&Khuvucbds=&locGia=">Nhà Phố</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23bietthu&thutu=moinhat&Khuvucbds=&locGia=">Biệt thự</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Quyền Admin
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="../../Project_He153014/listyeucau">Yêu cầu từ Khách</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23canho&thutu=moinhat&Khuvucbds=&locGia=">Thêm bất động sản</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23datnen&thutu=moinhat&Khuvucbds=&locGia=">Thêm tin tức</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23nhapho&thutu=moinhat&Khuvucbds=&locGia=">Quản lý tài khoản</a>
             </div>
           </li>
         </ul>

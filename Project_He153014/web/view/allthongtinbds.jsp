@@ -66,6 +66,9 @@
                 </select> 
             </div>
         </div>
+        <div class="d-sm-flex align-items-sm-center pt-2 clear" style="float: right;">
+            <div id="paggerbot" class="pagger" > </div>
+        </div>
 <!--        <div class="filters"> <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="true" aria-controls="mobile-filter">Filter<span class="px-1 fas fa-filter"></span></button> </div>-->
 <!--        <div class="content py-md-0 py-3">-->
             <section id="sidebar">
@@ -103,15 +106,19 @@
                 <div class="container py-3">
                     <div class="row">
                         <c:forEach items="${requestScope.thongtinbds}" var="t">
-                        <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-md-0 pt-4">
+                                
+                            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-md-0 pt-4 sanpham1" >
                             <div class="card"> <img class="card-img-top" src="../img/Avarbds/${t.imgavar}">
-                                <div class="card-body">
+                                <div class="card-body" style="height: 185px;">
+                                    <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
                                     <h6 class="font-weight-bold pt-1">${t.tenbds}</h6>
                                     <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star"></span> </div>
                                     <div class="d-flex align-items-center justify-content-between pt-3">
                                         <div class="d-flex flex-column">
-                                            <div class="h6 font-weight-bold">${t.giachu}</div>
+                                            <div class="h6 font-weight-bold">${t.giachu} <i class="bi bi-cash-coin" style="color: #49be25"></i></div> 
+                                            
                                         </div>
+                                            <a href="../../Project_He153014/thongtinbds/detail?thongtinbdsid=${t.idbds}" style="text-decoration: none;"><div class="btn btn-outline-primary">Chi tiết</div></a>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +132,7 @@
     </div>
         
              
-            <div id="paggerbot" class="pagger"> </div>
+            
         <script> 
 //            pagger("paggertop",${requestScope.pageindex},${requestScope.totalpage},2);
             pagger("paggerbot",${requestScope.pageindex},${requestScope.totalpage},2);

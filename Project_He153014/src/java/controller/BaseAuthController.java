@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dal.AccountDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -24,7 +25,13 @@ public abstract class BaseAuthController extends HttpServlet {
     private boolean isAuthenticated(HttpServletRequest request)
     {
         Account account = (Account)request.getSession().getAttribute("account");
-        return account !=null;
+//        return account !=null;
+        if(account !=null && account.getVaitro().getVaitro().equals("/admin")){
+            return true;
+        }else
+        {
+            return false;
+        }
     }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
