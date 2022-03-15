@@ -6,22 +6,20 @@
 package AdminController;
 
 import controller.BaseAuthController;
-import dal.TintucDBContext;
+import dal.ThongtinbdsDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Tintuc;
-import model.Yeucau;
+import model.Thongtinbds;
 
 /**
  *
  * @author 03623
  */
-public class InsertTintucController extends BaseAuthController {
+public class UpdateThongtinbds extends BaseAuthController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,7 +44,15 @@ public class InsertTintucController extends BaseAuthController {
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            request.getRequestDispatcher("../view_admin/insertTintuc.jsp").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        ThongtinbdsDBContext db = new ThongtinbdsDBContext();
+        
+        String idtin = request.getParameter("thongtinbdsid");
+        int id = Integer.parseInt(idtin);
+        Thongtinbds t = db.getThongtinbdstheoid(id);
+        request.setAttribute("thongtinbds", t);
+        request.getRequestDispatcher("../view_admin/updateThongtinbds.jsp").forward(request, response);
     }
 
     /**
@@ -63,23 +69,33 @@ public class InsertTintucController extends BaseAuthController {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         
-        String tieude = request.getParameter("tieude");
-        String ngay = request.getParameter("ngay");
-        Date ngay2 = Date.valueOf(ngay);
-        String noidung = request.getParameter("noidung");
+        Thongtinbds t = new Thongtinbds();
+        String idbds = request.getParameter("idbds");
+        int id = Integer.parseInt(idbds);
+        t.setIdbds(id);
+        String tenbds = request.getParameter("tenbds");
+        t.setTenbds(tenbds);
+        String loaibds = request.getParameter("loaibds");
+        t.setLoaibds(loaibds);
+        String khuvuc = request.getParameter("khuvuc");
+        t.setKhuvucbds(khuvuc);
+        String thongtin = request.getParameter("thongtin");
+        t.setThongtinbds(thongtin);
+        String giachu = request.getParameter("giachu");
+        t.setGiachu(giachu);
+        String giaso = request.getParameter("giaso");
+        long giaso2 = Long.parseLong(giaso);
+        t.setGiaso(giaso2);
         String img = request.getParameter("img");
-        
-        TintucDBContext db = new TintucDBContext();
-        Tintuc t = new Tintuc();
-        t.setId(1);
-        t.setTieude(tieude);
-        t.setNgay(ngay2);
-        t.setNoidung(noidung);
         t.setImgavar(img);
-        db.insertTintuc(t);
-        String thongbao2 = "Đã thêm tin tức thành công!";
-        request.setAttribute("thongbao2", thongbao2);
-        request.getRequestDispatcher("../view_admin/insertTintuc.jsp").forward(request, response);
+        t.setRowindex(0);
+        long millis=System.currentTimeMillis();    
+        java.sql.Date date = new java.sql.Date(millis);
+        t.setNgay(date);
+        
+        ThongtinbdsDBContext db = new ThongtinbdsDBContext();
+        db.updateThongtinbds(t);
+        response.sendRedirect("tatca");
     }
 
     /**

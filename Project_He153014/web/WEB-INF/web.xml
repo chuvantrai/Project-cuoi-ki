@@ -60,6 +60,22 @@
         <servlet-name>UpdateTintucController</servlet-name>
         <servlet-class>AdminController.UpdateTintucController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InsertThongtinbds</servlet-name>
+        <servlet-class>AdminController.InsertThongtinbds</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteThongtinbdsController</servlet-name>
+        <servlet-class>AdminController.DeleteThongtinbdsController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateThongtinbds</servlet-name>
+        <servlet-class>AdminController.UpdateThongtinbds</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertImgbdsController</servlet-name>
+        <servlet-class>AdminController.InsertImgbdsController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -119,6 +135,22 @@
     <servlet-mapping>
         <servlet-name>UpdateTintucController</servlet-name>
         <url-pattern>/tintuc/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertThongtinbds</servlet-name>
+        <url-pattern>/thongtinbds/insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteThongtinbdsController</servlet-name>
+        <url-pattern>/thongtinbds/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateThongtinbds</servlet-name>
+        <url-pattern>/thongtinbds/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertImgbdsController</servlet-name>
+        <url-pattern>/imgbds/insert</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

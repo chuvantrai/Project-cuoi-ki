@@ -75,6 +75,8 @@
               <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23bietthu&thutu=moinhat&Khuvucbds=&locGia=">Biệt thự</a>
             </div>
           </li>
+          <c:set var="num" value="/admin"/>
+          <c:if test="${sessionScope.account.vaitro.vaitro==num}">
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -88,11 +90,11 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="../../Project_He153014/listyeucau">Yêu cầu từ khách hàng</a>
-              <a class="dropdown-item" href="../../Project_He153014/tintuc/insert">Thêm bất động sản</a>
+              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/insert">Thêm bất động sản</a>
               <a class="dropdown-item" href="../../Project_He153014/tintuc/insert">Thêm tin tức</a>
-              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23nhapho&thutu=moinhat&Khuvucbds=&locGia=">Quản lý tài khoản</a>
             </div>
           </li>
+          </c:if>
         </ul>
 <!--        <form class="form-inline my-2 my-lg-0">-->
            <%if(account == null){%>

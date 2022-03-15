@@ -1,8 +1,9 @@
 <%-- 
-    Document   : insertTintuc
-    Created on : Mar 15, 2022, 4:02:57 PM
+    Document   : insertThongtinbds
+    Created on : Mar 15, 2022, 9:40:39 PM
     Author     : 03623
 --%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,33 +12,58 @@
     <head>
         <%@include file="../client/component/head.jsp" %>
 
-        <script src="../js/insertTintuc.js" type="text/javascript"></script>
+        <script src="../js/insertThongtinbds.js" type="text/javascript"></script>
     </head>
     <body>
         <%@include file="../client/component/header.jsp" %>
         <div class="row" style="width: 101%; background-color: #c1c3c4;">
             <div class="col-md-7 shadow-none p-3 mb-5 bg-light rounded" style=" margin: 25px;">
-                <h3>Thêm Tin Tức mới vào trang web</h3>
+                <h3>Thêm sản Phẩm bất động sản mới vào trang web</h3>
                 <p>Lưu ý: Không đc để trống</p>
                 <c:if test="${requestScope.thongbao2!=null}"> <p style="color: red">${requestScope.thongbao2}</p></c:if>
-                <form action="insert" method="POST" onsubmit = "return checkForm3()">
+                <form action="insert" method="POST" onsubmit = "return checkForm4()">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Tiêu đề tin tức</label>
-                        <input type="text" class="form-control" id="inputEmail4" name="tieude">
+                        <label for="inputEmail4">Tên bất động sản</label>
+                        <input type="text" class="form-control" id="inputEmail4" name="tenbds">
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Ngày của tin tức</label>
-                        <input type="date" class="form-control" id="inputPassword4" name="ngay">
+                    <div class="form-group col-md-3">
+                        <label for="inputPassword4">Loại bđs</label>
+                        <select name="loaibds" id="country" class="bg-light">
+                            <option value="#datnen" >Đất nền</option>
+                            <option value="#canho" >Căn hộ</option>
+                            <option value="#nhapho" >Nhà Phố</option>
+                            <option value="#bietthu" >Biệt thự</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputPassword4">Khu vực </label>
+                        <select name="khuvuc" id="country" class="bg-light">
+                            <option value="#nhatrang" >Nha Trang</option>
+                            <option value="#canlam" >Cam Lâm</option>
+                            <option value="#diemkhanh" >Diêm Khánh</option>
+                            <option value="#khanhvinh" >Khánh Vĩnh</option>
+                            <option value="#camranh" >Cam Rang</option>
+                            <option value="#khánhon" >Khánh Sơn</option>
+                            <option value="#ninhhoa" >Ninh Hòa</option>
+                            <option value="#vanninh" >Vạn Ninh</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Nội dung tin tức (xuống dòng thêm <samp style="color: #50bedb">&lt;br&gt;</samp>)<br>
-                        Thêm ảnh vào giữa đoạn văn VD: <samp style="color: #50bedb">&lt;img src="../img/tintuc/<samp style="color: red">tintuc5.jpg</samp>" alt=""&gt;</samp> chữ đỏ là tên file ảnh </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="noidung"></textarea>
+                    <label for="exampleFormControlTextarea1">Thông tin sản phẩm bất động sản</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="thongtin"></textarea>
                 </div>
                 <div class="form-group col-md-12">
-                    <label for="inputEmail4">Ảnh chính của tin tức (vd: bds.jpg) lưu trữ trong file img/tintuc</label>
+                    <label for="inputEmail4">*Giá bằng chữ</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="giachu">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">*Giá bằng số</label>
+                    <input type="number" class="form-control" id="inputEmail4" name="giaso">
+                </div>    
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Ảnh chính của bđs (vd: bds.jpg) lưu trữ trong file img/Avarbds</label>
                     <input type="text" class="form-control" id="inputEmail4" name="img">
                 </div>
                 <div style="padding-bottom: 25px;"> <button type="submit" class="btn btn-primary btn-lg">Thêm</button></div>

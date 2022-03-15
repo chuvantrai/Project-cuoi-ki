@@ -105,7 +105,15 @@
                               </div>
                           </div>
                       </div>
-<!--img-->
+<!--img-->  
+                <c:set var="num" value="/admin"/>
+                <c:if test="${sessionScope.account.vaitro.vaitro==num}">
+                    <form action="../../Project_He153014/imgbds/insert" method="GET">
+                        Thêm ảnh: <input type="text" name="img" placeholder="tên file ảnh"> <input type="submit" value="thêm">
+                        <input type="text" name="idbds" value="${requestScope.thongtinbds.idbds}" style="display: none">
+                    </form>
+                </c:if>
+                <br>
                 <h1>${requestScope.thongtinbds.tenbds}</h1>
                 <br><br>
                 <p class="chu1">${requestScope.thongtinbds.thongtinbds}</p>

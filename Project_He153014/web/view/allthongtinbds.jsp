@@ -111,7 +111,7 @@
                             <div class="card"> <img class="card-img-top" src="../img/Avarbds/${t.imgavar}">
                                 <div class="card-body" style="height: 185px;">
                                     <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
-                                    <h6 class="font-weight-bold pt-1">${t.tenbds}</h6>
+                                    <h6 class="font-weight-bold pt-1">#${t.idbds}.${t.tenbds}</h6>
                                     <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star"></span> </div>
                                     <div class="d-flex align-items-center justify-content-between pt-3">
                                         <div class="d-flex flex-column">
@@ -119,6 +119,11 @@
                                             
                                         </div>
                                             <a href="../../Project_He153014/thongtinbds/detail?thongtinbdsid=${t.idbds}" style="text-decoration: none;"><div class="btn btn-outline-primary">Chi tiết</div></a>
+                                            <c:set var="num" value="/admin"/>
+                                            <c:if test="${sessionScope.account.vaitro.vaitro==num}">
+                                            <a href="../../Project_He153014/thongtinbds/delete?thongtinbdsid=${t.idbds}" style="text-decoration: none;" class="btn btn-outline-danger">xóa</a>
+                                            <a href="../../Project_He153014/thongtinbds/update?thongtinbdsid=${t.idbds}" style="text-decoration: none;" class="btn btn-outline-success">Sửa</a>
+                                            </c:if>
                                     </div>
                                 </div>
                             </div>

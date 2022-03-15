@@ -6,22 +6,20 @@
 package AdminController;
 
 import controller.BaseAuthController;
+import dal.ThongtinbdsDBContext;
 import dal.TintucDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Tintuc;
-import model.Yeucau;
 
 /**
  *
  * @author 03623
  */
-public class InsertTintucController extends BaseAuthController {
+public class DeleteThongtinbdsController extends BaseAuthController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,7 +44,17 @@ public class InsertTintucController extends BaseAuthController {
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            request.getRequestDispatcher("../view_admin/insertTintuc.jsp").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        ThongtinbdsDBContext db = new ThongtinbdsDBContext();
+        
+        String idtin = request.getParameter("thongtinbdsid");
+        int id = Integer.parseInt(idtin);
+        db.deleteThongtinbds(id);//xoa thong tin
+        db.deleteImgbds(id);//xoa img
+//        String thongbao ="Đã xóa thành công!";
+//        request.setAttribute("thongbao3", thongbao);
+        response.sendRedirect("tatca");
     }
 
     /**
@@ -60,26 +68,7 @@ public class InsertTintucController extends BaseAuthController {
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
         
-        String tieude = request.getParameter("tieude");
-        String ngay = request.getParameter("ngay");
-        Date ngay2 = Date.valueOf(ngay);
-        String noidung = request.getParameter("noidung");
-        String img = request.getParameter("img");
-        
-        TintucDBContext db = new TintucDBContext();
-        Tintuc t = new Tintuc();
-        t.setId(1);
-        t.setTieude(tieude);
-        t.setNgay(ngay2);
-        t.setNoidung(noidung);
-        t.setImgavar(img);
-        db.insertTintuc(t);
-        String thongbao2 = "Đã thêm tin tức thành công!";
-        request.setAttribute("thongbao2", thongbao2);
-        request.getRequestDispatcher("../view_admin/insertTintuc.jsp").forward(request, response);
     }
 
     /**

@@ -252,19 +252,231 @@ public class ThongtinbdsDBContext extends DBContext{
         return -1;
     }
     
-     public static void main(String[] args){
-         Long i = 700000000L;
-         Long j = 1000000000L;
-            ThongtinbdsDBContext db = new ThongtinbdsDBContext();
-            ArrayList<Thongtinbds> acc = db.getThongtinbdsphanpage("LIKE '#datnen'", "NOT LIKE '#nhatrang'", i, j, 1, 2, "ORDER BY t.Giaso ASC");
-            for (Thongtinbds a : acc) {
-                System.out.println(a.getIdbds());
-                System.out.println(a.getKhuvucbds());
-                System.out.println(a.getLoaibds());
+    public void insertThongtinbds(Thongtinbds a)
+    {
+        String sql = "INSERT INTO [ThongTinBDS]\n" +
+                "           ([Tenbds]\n" +
+                "           ,[Thongtinbds]\n" +
+                "           ,[Loaibds]\n" +
+                "           ,[Khuvucbds]\n" +
+                "           ,[Giachu]\n" +
+                "           ,[Giaso]\n" +
+                "           ,[Ngay]\n" +
+                "           ,[ImgAvar])\n" +
+                "     VALUES\n" +
+                "           (?\n" +
+                "           ,?\n" +
+                "           ,?\n" +
+                "           ,?\n" +
+                "           ,?\n" +
+                "           ,?\n" +
+                "           ,?\n" +
+                "           ,?)";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setString(1, a.getTenbds());
+            stm.setString(2, a.getThongtinbds());
+            stm.setString(3, a.getLoaibds());
+            stm.setString(4, a.getKhuvucbds());
+            stm.setString(5, a.getGiachu());
+            stm.setLong(6, a.getGiaso());
+            stm.setDate(7, a.getNgay());
+            stm.setString(8, a.getImgavar());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             
-            int f = db.countloaipage("LIKE '#datnen'", "NOT LIKE '#nhatrang'", i, j, 1, 2, "ORDER BY t.Giaso ASC");
-            System.out.println(f);
-     }
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+    
+    public void deleteThongtinbds(int id)
+    {
+        String sql = "DELETE FROM [ThongTinBDS]\n" +
+                    "      WHERE IDbds = ?";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }    
+    
+    public void updateThongtinbds(Thongtinbds t)
+    {
+        String sql = "UPDATE [ThongTinBDS]\n" +
+                "   SET [Tenbds] = ?\n" +
+                "      ,[Thongtinbds] = ?\n" +
+                "      ,[Loaibds] = ?\n" +
+                "      ,[Khuvucbds] = ?\n" +
+                "      ,[Giachu] = ?\n" +
+                "      ,[Giaso] = ?\n" +
+                "      ,[Ngay] = ?\n" +
+                "      ,[ImgAvar] = ?\n" +
+                " WHERE IDbds = ?";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setInt(9, t.getIdbds());
+            stm.setString(1, t.getTenbds());
+            stm.setString(2, t.getThongtinbds());
+            stm.setString(3, t.getLoaibds());
+            stm.setString(4, t.getKhuvucbds());
+            stm.setString(5, t.getGiachu());
+            stm.setLong(6, t.getGiaso());
+            stm.setDate(7, t.getNgay());
+            stm.setString(8, t.getImgavar());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+    
+    public void deleteImgbds(int id)
+    {
+        String sql = "DELETE FROM [ImgBDS]\n" +
+                "      WHERE IDbds =?";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }  
+    public void insertImgbds(Imgbds a)
+    {
+        String sql = "INSERT INTO [ImgBDS]\n" +
+                "           ([IDbds]\n" +
+                "           ,[img])\n" +
+                "     VALUES\n" +
+                "           (?\n" +
+                "           ,?)";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setInt(1, a.getIdbds());
+            stm.setString(2, a.getImgbds());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+    
+//     public static void main(String[] args){
+//         Long i = 700000000L;
+//         Long j = 1000000000L;
+//            ThongtinbdsDBContext db = new ThongtinbdsDBContext();
+//            db.deleteImgbds(1);
+////            long millis=System.currentTimeMillis();    
+////        java.sql.Date date = new java.sql.Date(millis);
+////            Thongtinbds t = new Thongtinbds(28, "tes2", "tes1", "tes1", "tes1", "tes1", i,date,1, "tes1");
+////            db.deleteThongtinbds(28);
+//            
+////            int f = db.countloaipage("LIKE '#datnen'", "NOT LIKE '#nhatrang'", i, j, 1, 2, "ORDER BY t.Giaso ASC");
+////            System.out.println(f);
+//     }
 
 }

@@ -120,7 +120,7 @@
                                                             <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
-                                                                <h4 class="card-title" ><%=t.getTenbds()%></h4>
+                                                                <h4 class="card-title" >#<%=t.getIdbds()%>.<%=t.getTenbds()%></h4>
                                                                 <p class="card-text">Giá: <%=t.getGiachu()%>   <i class="bi bi-cash-coin" style="color: #49be25"></i></p>
                                                             </div>
                                                         </div>
@@ -169,7 +169,7 @@
                                                             
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
-                                                                <h4 class="card-title" ><%=t.getTenbds()%></h4>
+                                                                <h4 class="card-title" >#<%=t.getIdbds()%>.<%=t.getTenbds()%></h4>
                                                                 <p class="card-text">Giá: <%=t.getGiachu()%>    <i class="bi bi-cash-coin" style="color: #49be25"></i></p>
                                                             </div>
                                                         </div>
@@ -217,7 +217,7 @@
                                                             <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
-                                                                <h4 class="card-title" ><%=t.getTenbds()%></h4>
+                                                                <h4 class="card-title" >#<%=t.getIdbds()%>.<%=t.getTenbds()%></h4>
                                                                 <p class="card-text">Giá: <%=t.getGiachu()%>     <i class="bi bi-cash-coin" style="color: #49be25"></i></p>
                                                             </div>
                                                         </div>
@@ -265,7 +265,7 @@
                                                             <img class="img-fluid" alt="100%x280" src="img/Avarbds/<%=t.getImgavar()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
-                                                                <h4 class="card-title" ><%=t.getTenbds()%></h4>
+                                                                <h4 class="card-title" >#<%=t.getIdbds()%>.<%=t.getTenbds()%></h4>
                                                                 <p class="card-text">Giá: <%=t.getGiachu()%>     <i class="bi bi-cash-coin" style="color: #49be25"></i></p>
                                                             </div>
                                                         </div>
