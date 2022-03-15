@@ -79,6 +79,13 @@
 
                                 <h6 style="color: red;">Đang HOT!</h6>
                                 <div class="d-flex flex-column mt-4"><a class="btn btn-outline-primary" href="detail?tintucid=${t.id}" role="button">Xem ngay</a></div>
+                                <c:set var="num" value="/admin"/>
+                                <c:if test="${sessionScope.account.vaitro.vaitro==num}"> 
+                                    <div class="mt-4">
+                                        <a class="btn btn-outline-success" href="update?tintucid=${t.id}" role="button">Sửa</a>
+                                        <a class="btn btn-outline-danger" href="delete?tintucid=${t.id}" role="button">Xóa tin</a>
+                                    </div>
+                                </c:if>
                             </div>
                         </div>
                     </c:forEach>

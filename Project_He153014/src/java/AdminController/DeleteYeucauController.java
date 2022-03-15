@@ -20,7 +20,7 @@ import model.Yeucau;
  *
  * @author 03623
  */
-public class ListyeucauController extends BaseAuthController {
+public class DeleteYeucauController extends BaseAuthController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,6 +31,7 @@ public class ListyeucauController extends BaseAuthController {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -46,23 +47,14 @@ public class ListyeucauController extends BaseAuthController {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        
         YeucauDBContext db = new YeucauDBContext();
-        int pagesize = 4;
-        String page = request.getParameter("page");
-        if(page ==null || page.trim().length() ==0)
-            page= "1";
-        int pageindex =Integer.parseInt(page);
-        ArrayList<Yeucau> yeucaus = db.getAllyeucaus(pageindex,pagesize);
-        request.setAttribute("yeucaus", yeucaus);// list all yeucau
-        int count = db.count();
-        int totalpage = (count%pagesize==0)?(count/pagesize):(count / pagesize)+1;
-        request.setAttribute("totalpage", totalpage);
-        request.setAttribute("pageindex", pageindex);
         
-//        String thongbao4 = (String)request.getAttribute("thongbao3");
-//        request.setAttribute("thongbao4", thongbao4);
-        request.getRequestDispatcher("view_admin/listyeucau.jsp").forward(request, response);
+        String idyc = request.getParameter("idyc");
+        int id = Integer.parseInt(idyc);
+        db.deleteYeucau(id);
+//        String thongbao ="Đã xóa thành công!";
+//        request.setAttribute("thongbao3", thongbao);
+        response.sendRedirect("../listyeucau");
     }
 
     /**
@@ -76,6 +68,8 @@ public class ListyeucauController extends BaseAuthController {
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
     }
 
     /**

@@ -112,25 +112,59 @@ public class YeucauDBContext extends DBContext{
         }
     }
     
+     public void deleteYeucau(int id)
+    {
+        String sql = "DELETE FROM [YeuCau]\n" +
+                "      WHERE IDyeucau =? ";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(YeucauDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(YeucauDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(YeucauDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+    
 //        public static void main(String[] args){
 //
 //            YeucauDBContext db = new YeucauDBContext();
+//            db.deleteYeucau(13);
 ////            Yeucau y = new Yeucau();
 ////                y.setIdyc(1);
 ////                y.setHoten("hh");
 ////                y.setSdt(123L);
 ////                y.setNoidung("noidunggggg");
-////                long millis=System.currentTimeMillis();  
-////    // creating a new object of the class Date  
+////                long millis=System.currentTimeMillis();    
 ////        java.sql.Date date = new java.sql.Date(millis); 
 ////                y.setDate(date);
 ////                y.setUserid(9);
 ////            db.insertYeucau(y);
-//            ArrayList<Yeucau> acc = db.getAllyeucaus(2, 3);
-//            for (Yeucau a : acc) {
-//                System.out.println(a.getDate());
-//                System.out.println(a.getSdt());
-//                System.out.println(a.getUserid());
-//            }
+////            ArrayList<Yeucau> acc = db.getAllyeucaus(2, 3);
+////            for (Yeucau a : acc) {
+////                System.out.println(a.getDate());
+////                System.out.println(a.getSdt());
+////                System.out.println(a.getUserid());
+////            }
 //    }
 }

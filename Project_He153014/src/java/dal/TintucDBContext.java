@@ -107,15 +107,133 @@ public class TintucDBContext extends DBContext{
         }
         return -1;
     }
+    public void insertTintuc(Tintuc a)
+    {
+        String sql = "INSERT INTO [TinTuc1]\n" +
+                    "           ([Tieude]\n" +
+                    "           ,[Noidung]\n" +
+                    "           ,[ngay]\n" +
+                    "           ,[imgAvar])\n" +
+                    "     VALUES\n" +
+                    "           (?\n" +
+                    "           ,?\n" +
+                    "           ,?\n" +
+                    "           ,?)";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setString(1, a.getTieude());
+            stm.setString(2, a.getNoidung());
+            stm.setDate(3, a.getNgay());
+            stm.setString(4, a.getImgavar());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+    
+    public void deleteTintuc(int id)
+    {
+        String sql = "DELETE FROM [TinTuc1]\n" +
+                "      WHERE ID = ?";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+    public void updateTintuc(Tintuc t)
+    {
+        String sql = "UPDATE [TinTuc1]\n" +
+                    "   SET [Tieude] = ?\n" +
+                    "      ,[Noidung] = ?\n" +
+                    "      ,[ngay] = ?\n" +
+                    "      ,[imgAvar] = ?\n" +
+                    " WHERE ID = ?";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setInt(5, t.getId());
+            stm.setString(1, t.getTieude());
+            stm.setString(2, t.getNoidung());
+            stm.setDate(3, t.getNgay());
+            stm.setString(4, t.getImgavar());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(TintucDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
 
 //        public static void main(String[] args){
 //
 //            TintucDBContext db = new TintucDBContext();
-//            ArrayList<Tintuc> acc = db.getTintuctheopage(2, 3);
-//            for (Tintuc a : acc) {
-//                System.out.println(a.getTieude());
-//                System.out.println(a.getImgavar());
-//            }
+//            long millis=System.currentTimeMillis();    
+//        java.sql.Date date = new java.sql.Date(millis);
+//            Tintuc a = new Tintuc(6, "tét2", "test2", date, "tset2");
+//            db.deleteTintuc(6);
 ////                Tintuc t = db.getTintuctheoid(1);
 ////                System.out.println(t.getTieude());
 ////                System.out.println(t.getImgavar());

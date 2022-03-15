@@ -6,21 +6,21 @@
 package AdminController;
 
 import controller.BaseAuthController;
-import dal.YeucauDBContext;
+import dal.TintucDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Yeucau;
+import model.Tintuc;
 
 /**
  *
  * @author 03623
  */
-public class ListyeucauController extends BaseAuthController {
+public class UpdateTintucController extends BaseAuthController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,6 +31,7 @@ public class ListyeucauController extends BaseAuthController {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -46,23 +47,13 @@ public class ListyeucauController extends BaseAuthController {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+        TintucDBContext db = new TintucDBContext();
         
-        YeucauDBContext db = new YeucauDBContext();
-        int pagesize = 4;
-        String page = request.getParameter("page");
-        if(page ==null || page.trim().length() ==0)
-            page= "1";
-        int pageindex =Integer.parseInt(page);
-        ArrayList<Yeucau> yeucaus = db.getAllyeucaus(pageindex,pagesize);
-        request.setAttribute("yeucaus", yeucaus);// list all yeucau
-        int count = db.count();
-        int totalpage = (count%pagesize==0)?(count/pagesize):(count / pagesize)+1;
-        request.setAttribute("totalpage", totalpage);
-        request.setAttribute("pageindex", pageindex);
-        
-//        String thongbao4 = (String)request.getAttribute("thongbao3");
-//        request.setAttribute("thongbao4", thongbao4);
-        request.getRequestDispatcher("view_admin/listyeucau.jsp").forward(request, response);
+        String idtin = request.getParameter("tintucid");
+        int id = Integer.parseInt(idtin);
+        Tintuc t = db.getTintuctheoid(id);
+        request.setAttribute("tintuc", t);
+        request.getRequestDispatcher("../view_admin/updateTintuc.jsp").forward(request, response);
     }
 
     /**
@@ -76,6 +67,26 @@ public class ListyeucauController extends BaseAuthController {
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        
+        String idtin = request.getParameter("idtintuc");
+        int id = Integer.parseInt(idtin);
+        String tieude = request.getParameter("tieude");
+        String ngay = request.getParameter("ngay");
+        Date ngay2 = Date.valueOf(ngay);
+        String noidung = request.getParameter("noidung");
+        String img = request.getParameter("img");
+        
+        TintucDBContext db = new TintucDBContext();
+        Tintuc t = new Tintuc();
+        t.setId(id);
+        t.setTieude(tieude);
+        t.setNgay(ngay2);
+        t.setNoidung(noidung);
+        t.setImgavar(img);
+        db.updateTintuc(t);
+        response.sendRedirect("tatca");
     }
 
     /**

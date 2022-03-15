@@ -196,11 +196,10 @@ public class ThongtinbdsDBContext extends DBContext{
         ArrayList<Thongtinbds> thongtinbds = new ArrayList<>();
         try {
             String sql = "SELECT IDbds, Tenbds, Thongtinbds, Loaibds, Khuvucbds, Giachu, Giaso, Ngay, ImgAvar, row_indexFROM \n" +
-                    "FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY IDbds ASC)) as row_indexFROM FROM dbo.ThongTinBDS \n" +
+                    "FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY "+thutu+")) as row_indexFROM FROM dbo.ThongTinBDS \n" +
                     "			WHERE Loaibds "+Loaibds+" AND Khuvucbds "+Khuvucbds+" AND Giaso >= ? AND Giaso <= ?) t\n" +
                     "					WHERE t.row_indexFROM >= (? -1)*? + 1 AND t.row_indexFROM <= ? * ? \n" +
                     "					";
-            sql+= "ORDER BY "+thutu;
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setLong(1, Giasobe);
             stm.setLong(2, Giasolon);

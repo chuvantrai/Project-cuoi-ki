@@ -64,18 +64,20 @@
             <div class="d-flex justify-content-center row">
                 <div class="col-md-10">
                     <div id="paggertop" class="pagger"> </div><br>
+                    <c:if test="${requestScope.thongbao2!=null}"> <p style="color: red">${requestScope.thongbao4}</p></c:if>
                     <c:forEach items="${requestScope.yeucaus}" var="t"> 
                         <div class="row p-2 bg-white border rounded">
-                            <div class="col-md-6 mt-1">
-                                <h5>Khách hàng: ${t.hoten}</h5>
-                                <p> SĐT: ${t.sdt}
-                                <ion-icon name="calendar-outline"></ion-icon>  ${t.date}
+                            <div class="col-md-10 mt-1">
+                                <h5> <span style="color: #50bedb; font-size: 15px;">Khách hàng: &nbsp;</span>${t.hoten}</h5>
+                                
+                                <p> <span style="color: #50bedb; font-size: 15px;">SĐT: &nbsp;</span> ${t.sdt}
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon name="calendar-outline"></ion-icon>  ${t.date}
                                 </p>
 
-                                <p class="text-justify text-truncate para mb-0">${t.noidung}</p>
+                                <p class="">${t.noidung}</p>
                             </div>
-                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                                <div class="d-flex flex-column mt-4"><a class="btn btn-outline-primary" href="#" role="button">Xóa yêu cầu</a></div>
+                            <div class="align-items-center align-content-center col-md-2 border-left mt-1" style="float: right;">
+                                <div class="d-flex flex-column mt-4"><a class="btn btn-outline-primary" href="yeucau/delete?idyc=${t.idyc}" role="button">Xóa yêu cầu</a></div>
                             </div>
                         </div>
 

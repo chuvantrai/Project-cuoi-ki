@@ -86,11 +86,11 @@ public class AllthongtinbdsController extends HttpServlet {
         int pageindex =Integer.parseInt(page);
         
         String thutu2="";
-        if(thutu==null || thutu.trim().length() ==0||thutu.equals("moinhat")){thutu2 = "t.IDbds DESC";//moi nhat
+        if(thutu==null || thutu.trim().length() ==0||thutu.equals("moinhat")){thutu2 = "IDbds DESC";//moi nhat
         }
-        if(thutu!=null&&thutu.equals("cunhat") ){thutu2 = "t.IDbds ASC";}// cũ nhất
-        if(thutu!=null&&thutu.equals("thap-cao") ){thutu2 = "t.Giaso ASC";}// giá thap-cao
-        if(thutu!=null&&thutu.equals("cao-thap") ){thutu2 = "t.Giaso DESC";}// giá cao-thap
+        if(thutu!=null&&thutu.equals("cunhat") ){thutu2 = "IDbds ASC";}// cũ nhất
+        if(thutu!=null&&thutu.equals("thap-cao") ){thutu2 = "Giaso ASC";}// giá thap-cao
+        if(thutu!=null&&thutu.equals("cao-thap") ){thutu2 = "Giaso DESC";}// giá cao-thap
         
         ArrayList<Thongtinbds> thongtinbds = db.getThongtinbdsphanpage(Loaibds2, Khuvucbds2, Giasobe2, Giasolon2, pageindex, pagesize, thutu2);
         request.setAttribute("thongtinbds", thongtinbds);

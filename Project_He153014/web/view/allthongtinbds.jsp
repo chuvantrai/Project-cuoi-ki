@@ -39,7 +39,7 @@
 
         </script>
         <!--        file js-->
-<script src="../js/alltintuc.js" type="text/javascript"></script>
+        <script src="../js/allthongtinbds.js" type="text/javascript"></script>
     </head>
     <body>
         <%@include file="../client/component/header.jsp" %>

@@ -1,44 +1,47 @@
 <%-- 
-    Document   : guiyeucau
-    Created on : Mar 14, 2022, 4:16:57 PM
+    Document   : insertTintuc
+    Created on : Mar 15, 2022, 4:02:57 PM
     Author     : 03623
 --%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <%@include file="../client/component/head.jsp" %>
 
-        <script src="js/yeucau.js" type="text/javascript"></script>
+        <script src="../js/insertTintuc.js" type="text/javascript"></script>
     </head>
     <body>
         <%@include file="../client/component/header.jsp" %>
-        
-        
         <div class="row" style="width: 101%; background-color: #c1c3c4;">
             <div class="col-md-7 shadow-none p-3 mb-5 bg-light rounded" style=" margin: 25px;">
-                <h3>LIÊN HỆ CHU VĂN NGỌC</h3>
-                <p>Liên hệ ngay với Chu Văn Ngọc - Chuyên viên tư vấn Bất Động Sản hàng đầu Nha Trang - chuyên nghiệp - nhanh chóng - chính xác.</p>
+                <h3>Thêm Tin Tức mới vào trang web</h3>
+                <p>Lứu ý: Không đc để trống</p>
                 <c:if test="${requestScope.thongbao2!=null}"> <p style="color: red">${requestScope.thongbao2}</p></c:if>
-                <form action="yeucau" method="POST" onsubmit = "return checkForm2()">
+                <form action="insert" method="POST" onsubmit = "return checkForm3()">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">* Họ và tên</label>
-                        <input type="name" class="form-control" id="inputEmail4" name="hoten" value="${sessionScope.account.displayname}">
+                        <label for="inputEmail4">Tiêu đề tin tức</label>
+                        <input type="text" class="form-control" id="inputEmail4" name="tieude">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">* Điện thoại</label>
-                        <input type="number" class="form-control" id="inputPassword4" name="sdt" maxlength="11" value="${sessionScope.account.sdt}">
+                        <label for="inputPassword4">Ngày của tin tức</label>
+                        <input type="date" class="form-control" id="inputPassword4" name="ngay">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Anh/chị đang quan tâm sản phẩm nào?</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="noidung"></textarea>
+                    <label for="exampleFormControlTextarea1">Nội dung tin tức (xuống dòng thêm <samp style="color: #50bedb">&lt;br&gt;</samp>)<br>
+                        Thêm ảnh vào giữa đoạn văn VD: <samp style="color: #50bedb">&lt;img src="../img/tintuc/<samp style="color: red">tintuc5.jpg</samp>" alt=""&gt;</samp> chữ đỏ là tên file ảnh </label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="noidung"></textarea>
                 </div>
-                    <div style="padding-bottom: 25px;"><button type="submit" class="btn btn-primary btn-lg">Gửi Yêu cầu</button> </div>
-                </form>   
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Ảnh chính của tin tức (vd: bds.jpg) lưu trữ trong file img/Avarbds</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="img">
+                </div>
+                <div style="padding-bottom: 25px;"> <button type="submit" class="btn btn-primary btn-lg">Thêm</button></div>
+                </form>
             </div>
             <div class="col-6 col-md-4 shadow-none p-3 mb-5 bg-light rounded" style=" margin: 25px;">
                 <h3>Thông tin liên hệ nhanh:</h3>
@@ -59,7 +62,7 @@
                 </div>
             </div>
         </div>
-         
+
         <%@include file="../client/component/footer_jsboostrap_icon.jsp" %>
     </body>
 </html>

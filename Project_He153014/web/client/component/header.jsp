@@ -21,10 +21,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="/Project_He153014/home"
-              >Trang Chủ <span class="sr-only">(current)</span></a
-            >
+          <li class="nav-item ">
+            <a class="nav-link" href="/Project_He153014/home">Trang Chủ </a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="/Project_He153014/gioithieu">Giới Thiệu</a>
@@ -89,9 +87,9 @@
               Quyền Admin
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="../../Project_He153014/listyeucau">Yêu cầu từ Khách</a>
-              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23canho&thutu=moinhat&Khuvucbds=&locGia=">Thêm bất động sản</a>
-              <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23datnen&thutu=moinhat&Khuvucbds=&locGia=">Thêm tin tức</a>
+              <a class="dropdown-item" href="../../Project_He153014/listyeucau">Yêu cầu từ khách hàng</a>
+              <a class="dropdown-item" href="../../Project_He153014/tintuc/insert">Thêm bất động sản</a>
+              <a class="dropdown-item" href="../../Project_He153014/tintuc/insert">Thêm tin tức</a>
               <a class="dropdown-item" href="../../Project_He153014/thongtinbds/tatca?Loaibds=%23nhapho&thutu=moinhat&Khuvucbds=&locGia=">Quản lý tài khoản</a>
             </div>
           </li>
