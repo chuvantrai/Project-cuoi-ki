@@ -79,7 +79,7 @@ public class AllthongtinbdsController extends HttpServlet {
         if(locGia!=null&&locGia.equals("7-10t") ){Giasobe2= 7000000000L; Giasolon2 = 10000000000L;}
         if(locGia!=null&&locGia.equals("10-20t") ){Giasobe2= 10000000000L; Giasolon2 = 20000000000L;}
         if(locGia!=null&&locGia.equals(">20t") ){Giasobe2= 20000000000L; Giasolon2 = 1000000000000L;}
-        int pagesize = 3;
+        int pagesize = 6;
         String page = request.getParameter("page");
         if(page ==null || page.trim().length() ==0){
             page= "1";}

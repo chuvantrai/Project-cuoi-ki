@@ -39,6 +39,9 @@
         <!--Main JS File -->
         <script src="../js/main.js" type="text/javascript"></script>
         
+        <style>
+            
+        </style>
         
     </head>
     <body>
@@ -48,24 +51,24 @@
     <!-- Tin tức Bất Động Sản Nha Trang Mới Nhất-->
     <div class=" row news0">
       <div class="col-12 mb-3  news1">
-        <h2>Thông Tin Bất Động Sản Nha Trang Mới Nhất</h2>
+        <h2 >Thông Tin Bất Động Sản Nha Trang Mới Nhất</h2>
         <p>Trước khi đầu tư hãy tìm hiểu kỹ thông tin về bất động sản Nha Trang. Dưới đây là những</p>
         <p>thông tin bổ ích và chính thống được chúng tôi chia sẻ.</p>
       </div>
-           <div class="col-6 mb-3 news2">
+           <div class="col-lg-6 mb-3 news2">
            <%for (Tintuc t : tintucs) {%>
                 <%if(index1==0){ index1+=1;%>
-                <div class="carousel-inner">
-                    <img src="img/tintuc/<%=t.getImgavar()%>" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <a href="tintuc/detail?tintucid=<%=t.getId()%>"><h5><%=t.getTieude()%></h5></a>
-                        <p><ion-icon name="calendar-outline"></ion-icon><%=t.getNgay()%></p>
+                <div class="carousel-inner" style="padding-left: 20px;">
+                    <div id="example2"><img src="img/tintuc/<%=t.getImgavar()%>" class="d-block w-100" alt="..." style=""></div>
+                    <div class="carousel-caption d-md-block " style="letter-spacing: -1px;background: rgb(0, 0, 0); /* fallback color */background: rgba(0, 0, 0, 0.7);">
+                        <a href="tintuc/detail?tintucid=<%=t.getId()%>"><h5 style="" ><%=t.getTieude()%></h5></a>
+                        <p style=""><ion-icon name="calendar-outline"></ion-icon><%=t.getNgay()%></p>
                     </div>
                 </div>
                 <%}%>
           <%}%> 
           </div>
-      <div class="col-6 mb-3 news3">
+      <div class="col-lg-6 mb-3 news3">
         <%for (Tintuc t : tintucs) { %>
             <%if(index1>1 && index1<=3){ %>
         <div class="card mb-3" style="max-width: 680px;">

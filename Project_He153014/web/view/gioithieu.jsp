@@ -29,10 +29,10 @@
         
         <c:forEach items="${requestScope.gioithieunvs}" var="g">
       <div class=" row news0">
-      <div class="col-12 mb-3  news1">
+      <div class="col-lg-12 mb-3  news1">
         <h2>Giới thiệu</h2>
       </div>
-      <div class="col-4 mb-3 news2">
+      <div class="col-lg-4 mb-3 news2">
         <div class="carousel-inner">
             <img src="img/gioithieu/${g.img}" class="d-block" alt="...">
             <div class="carousel-caption d-none d-md-block">
@@ -40,7 +40,7 @@
           </div>
           
       </div>
-          <div class="col-8 mb-3 news3"> 
+          <div class="col-lg-8 mb-3 news3"> 
               Về tôi:<span class="news4">${g.ten}</span>
               <p>${g.chitiet} </p>
       </div> 

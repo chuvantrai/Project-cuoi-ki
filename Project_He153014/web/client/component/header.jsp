@@ -78,7 +78,7 @@
           <c:set var="num" value="/admin"/>
           <c:if test="${sessionScope.account.vaitro.vaitro==num}">
           <li class="nav-item dropdown">
-            <a
+              <a style="color: blue"
               class="nav-link dropdown-toggle"
               href="#"
               id="navbarDropdownMenuLink"
@@ -86,7 +86,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Quyền Admin
+                Quyền Admin
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="../../Project_He153014/listyeucau">Yêu cầu từ khách hàng</a>
@@ -112,3 +112,41 @@
            <%}%>
       </div>
     </nav>
+
+      
+<!--    icon sđt báo giá  -->
+      <div
+      class="topcontact"
+      style="
+        position: fixed;
+        bottom:66px;
+        left: 8px;
+        padding: 10px 15px 10px 15px;
+        color: #fe9d15;
+        transition: all ease 0.4s;
+        background: #abdbe3;
+        border-radius: 40px;
+        z-index: 999;">
+      <b><a data-bs-toggle="modal"  data-bs-target="#exampleModal" style="color: #000">
+          <span class="fa fa-comment-dots" aria-hidden="true"></span>
+          <span class="text" style="color: #cc3300;"><i class="bi bi-telephone-fill"></i> 𝟎𝟖𝟕𝟗.𝟖𝟒𝟗.𝟖𝟖𝟖</span>
+        </a></b>
+    </div>
+    <div
+      class="topcontact"
+      style="
+        position: fixed;
+        bottom: 12px;
+        left: 8px;
+        padding: 10px 15px 10px 15px;
+        
+        transition: all ease 0.4s;
+        background: #abdbe3;
+        border-radius: 40px;
+        z-index: 999;
+        font-size: 17px;">
+      <b><a data-bs-toggle="modal"  data-bs-target="#exampleModal" style="color: #000" href="../../Project_He153014/yeucau">
+          <span class="fa fa-comment-dots" aria-hidden="true"></span>
+          <span class="text" style="color: #0066ff;"><i class="bi bi-chat-left-dots-fill"></i> Nhận báo giá</span>
+        </a></b>
+    </div>

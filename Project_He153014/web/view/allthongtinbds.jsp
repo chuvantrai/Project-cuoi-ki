@@ -66,8 +66,8 @@
                 </select> 
             </div>
         </div>
-        <div class="d-sm-flex align-items-sm-center pt-2 clear" style="float: right;">
-            <div id="paggerbot" class="pagger" > </div>
+        <div class="d-sm-flex align-items-sm-center pt-2 " style=" width: 100%;">
+            <div id="paggerbot" class="pagger col-lg-12" style="margin-left: 30%;clear: both;"> </div>
         </div>
 <!--        <div class="filters"> <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="true" aria-controls="mobile-filter">Filter<span class="px-1 fas fa-filter"></span></button> </div>-->
 <!--        <div class="content py-md-0 py-3">-->
@@ -102,12 +102,13 @@
                 </div>
             </section> <!-- Products Section -->
             </form>
+                        <div class="col-mb-12" >
             <section id="products">
                 <div class="container py-3">
                     <div class="row">
                         <c:forEach items="${requestScope.thongtinbds}" var="t">
                                 
-                            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-md-0 pt-4 sanpham1" >
+                            <div class="col-lg-4  col-sm-10 offset-md-0 offset-sm-1 pt-md-0 pt-4 sanpham1" >
                             <div class="card"> <img class="card-img-top" src="../img/Avarbds/${t.imgavar}">
                                 <div class="card-body" style="height: 185px;">
                                     <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
@@ -132,7 +133,7 @@
                     </div>
                 </div>
             </section>
-            
+            </div>
 <!--        </div>-->
     </div>
         

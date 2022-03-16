@@ -49,7 +49,7 @@ public class AlltintucController extends HttpServlet {
         
         TintucDBContext db = new TintucDBContext();
         
-        int pagesize = 1;
+        int pagesize = 5;
         String page = request.getParameter("page");
         if(page ==null || page.trim().length() ==0)
             page= "1";
