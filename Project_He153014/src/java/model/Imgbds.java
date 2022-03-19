@@ -12,14 +12,26 @@ package model;
 public class Imgbds {
     private int idbds;
     private String imgbds;
+    private int idimg;
 
     public Imgbds() {
     }
 
-    public Imgbds(int idbds, String imgbds) {
+    public Imgbds(int idbds, String imgbds, int idimg) {
         this.idbds = idbds;
         this.imgbds = imgbds;
+        this.idimg = idimg;
     }
+
+    public int getIdimg() {
+        return idimg;
+    }
+
+    public void setIdimg(int idimg) {
+        this.idimg = idimg;
+    }
+
+    
 
     public int getIdbds() {
         return idbds;

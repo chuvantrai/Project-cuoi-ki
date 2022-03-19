@@ -69,9 +69,8 @@ public class TintucDBContext extends DBContext{
     public ArrayList<Tintuc> getTintuctheopage(int pageindex,int pagesize) {
         ArrayList<Tintuc> Tintucs = new ArrayList<>();
         try {
-            String sql = "SELECT ID , Tieude,t.Noidung,t.ngay,t.imgAvar FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY ID ASC)) as row_indexFROM FROM dbo.TinTuc1) t\n" +
-                    "WHERE t.row_indexFROM >=(? -1)*? + 1 AND t.row_indexFROM <= ? * ?\n" +
-                    "ORDER BY t.ID DESC";
+            String sql = "SELECT ID , Tieude,t.Noidung,t.ngay,t.imgAvar FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY ngay DESC)) as row_indexFROM FROM dbo.TinTuc1) t\n" +
+                    "WHERE t.row_indexFROM >=(? -1)*? + 1 AND t.row_indexFROM <= ? * ?";
             
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, pageindex);

@@ -7,7 +7,6 @@ package AdminController;
 
 import controller.BaseAuthController;
 import dal.ThongtinbdsDBContext;
-import dal.TintucDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author 03623
  */
-public class DeleteThongtinbdsController extends BaseAuthController {
+public class DeleteImgbdsController extends BaseAuthController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,7 +29,17 @@ public class DeleteThongtinbdsController extends BaseAuthController {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        
+        String img = request.getParameter("idimg");
+        String idbds = request.getParameter("idbds");
+        int id = Integer.parseInt(img);
+        ThongtinbdsDBContext db = new ThongtinbdsDBContext();
+        db.deleteImgbds2(id);
+        response.sendRedirect("../thongtinbds/detail?thongtinbdsid="+idbds);
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -44,26 +53,7 @@ public class DeleteThongtinbdsController extends BaseAuthController {
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        
-        String idtin = request.getParameter("thongtinbdsid");
-        int id = Integer.parseInt(idtin);
-        
-        if(idtin!=null){
-            ThongtinbdsDBContext db = new ThongtinbdsDBContext();
-            db.deleteImgbds(id);//xoa img
-        }
-        if(id!= -1){
-            ThongtinbdsDBContext db2 = new ThongtinbdsDBContext();
-            db2.deleteThongtinbds(id);//xoa thong tin
-        }
-        
-        
-        
-//        String thongbao ="Đã xóa thành công!";
-//        request.setAttribute("thongbao3", thongbao);
-        response.sendRedirect("tatca");
+        processRequest(request, response);
     }
 
     /**
@@ -77,7 +67,7 @@ public class DeleteThongtinbdsController extends BaseAuthController {
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
     /**

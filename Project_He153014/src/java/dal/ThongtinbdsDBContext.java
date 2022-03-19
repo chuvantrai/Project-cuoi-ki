@@ -172,10 +172,10 @@ public class ThongtinbdsDBContext extends DBContext{
     public ArrayList<Imgbds> getAllimgbds(int idbds){
         ArrayList<Imgbds> imgbds = new ArrayList<>();
         try {
-            String sql = "SELECT a.IDbds, a.img FROM dbo.ImgBDS AS a\n" +
-                            "INNER JOIN dbo.ThongTinBDS AS b\n" +
-                            "ON b.IDbds = a.IDbds\n" +
-                            "WHERE b.IDbds= ?";
+            String sql = "SELECT a.IDbds, a.img, a.IDimg FROM dbo.ImgBDS2 AS a\n" +
+"                            INNER JOIN dbo.ThongTinBDS AS b\n" +
+"                            ON b.IDbds = a.IDbds\n" +
+"                            WHERE b.IDbds = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, idbds);
             ResultSet rs = stm.executeQuery();
@@ -184,6 +184,7 @@ public class ThongtinbdsDBContext extends DBContext{
                 Imgbds t = new Imgbds();
                 t.setIdbds(rs.getInt("IDbds"));
                 t.setImgbds(rs.getString("img"));
+                t.setIdimg(rs.getInt("IDimg"));
                 imgbds.add(t);
             }
         } catch (SQLException ex) {
@@ -395,8 +396,8 @@ public class ThongtinbdsDBContext extends DBContext{
     
     public void deleteImgbds(int id)
     {
-        String sql = "DELETE FROM [ImgBDS]\n" +
-                "      WHERE IDbds =?";
+        String sql = "DELETE FROM [ImgBDS2]\n" +
+            "      WHERE IDbds = ?";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -428,7 +429,7 @@ public class ThongtinbdsDBContext extends DBContext{
     }  
     public void insertImgbds(Imgbds a)
     {
-        String sql = "INSERT INTO [ImgBDS]\n" +
+        String sql = "INSERT INTO [ImgBDS2]\n" +
                 "           ([IDbds]\n" +
                 "           ,[img])\n" +
                 "     VALUES\n" +
@@ -465,11 +466,45 @@ public class ThongtinbdsDBContext extends DBContext{
         }
     }
     
+    public void deleteImgbds2(int id)
+    {
+        String sql = "DELETE FROM [ImgBDS2]\n" +
+            "      WHERE IDimg = ?";
+        PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            if(stm != null)
+            {
+                try {
+                    stm.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if(connection !=null)
+            {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ThongtinbdsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+//    
 //     public static void main(String[] args){
-//         Long i = 700000000L;
-//         Long j = 1000000000L;
+////         Long i = 700000000L;
+////         Long j = 1000000000L;
 //            ThongtinbdsDBContext db = new ThongtinbdsDBContext();
-//            db.deleteImgbds(1);
+//            db.deleteThongtinbds(40);
 ////            long millis=System.currentTimeMillis();    
 ////        java.sql.Date date = new java.sql.Date(millis);
 ////            Thongtinbds t = new Thongtinbds(28, "tes2", "tes1", "tes1", "tes1", "tes1", i,date,1, "tes1");

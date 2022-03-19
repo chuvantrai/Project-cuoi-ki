@@ -66,7 +66,7 @@
                 </select> 
             </div>
         </div>
-        <div class="d-sm-flex align-items-sm-center pt-2 " style=" width: 100%;">
+        <div class="d-sm-flex align-items-sm-center pt-2 " style=" width: 80%;">
             <div id="paggerbot" class="pagger col-lg-12" style="margin-left: 30%;clear: both;"> </div>
         </div>
 <!--        <div class="filters"> <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="true" aria-controls="mobile-filter">Filter<span class="px-1 fas fa-filter"></span></button> </div>-->

@@ -47,10 +47,11 @@ public class InsertImgbdsController extends BaseAuthController {
         String img = request.getParameter("img");
         String idbds = request.getParameter("idbds");
         int id = Integer.parseInt(idbds);
-        Imgbds i = new Imgbds(id, img);
+        Imgbds i = new Imgbds(id, img, 0);
         ThongtinbdsDBContext db = new ThongtinbdsDBContext();
         db.insertImgbds(i);
-        response.sendRedirect("../thongtinbds/tatca");
+//        response.sendRedirect("../thongtinbds/tatca");
+        response.sendRedirect("../thongtinbds/detail?thongtinbdsid="+idbds);
     }
 
     /**

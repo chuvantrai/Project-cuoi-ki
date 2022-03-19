@@ -91,7 +91,13 @@
                                           
                                           <div class="carousel-item active"> <img src="../img/Avarbds/${requestScope.thongtinbds.imgavar}" alt="Hills"> </div>
                                           <%for (Imgbds i : imgbds) {%>
-                                          <div class="carousel-item"> <img src="../img/Avarbds/<%=i.getImgbds()%>" alt="Hills"> </div>
+                                          <div class="carousel-item"> 
+                                              <img src="../img/Avarbds/<%=i.getImgbds()%>" alt="Hills"> 
+                                              <c:set var="num" value="/admin"/>
+                                              <c:if test="${sessionScope.account.vaitro.vaitro==num}">
+                                              <div class="carousel-caption d-md-block " > <a class="btn btn-danger" href="../../Project_He153014/imgbds/delete?idimg=<%=i.getIdimg()%>&idbds=${requestScope.thongtinbds.idbds}" role="button">Xóa </a></div>
+                                              </c:if>
+                                              </div>
                                               <%}%>
                                       </div> <!-- Left right --> 
                                       <a class="carousel-control-prev" href="#custCarousel" data-slide="prev"> <i class="bi bi-arrow-left-circle-fill" style="color: blue;font-size: 2rem;"></i> </a> <a class="carousel-control-next" href="#custCarousel" data-slide="next"> <i class="bi bi-arrow-right-circle-fill" style="color: blue; font-size: 2rem;"></i> </a> <!-- Thumbnails -->
