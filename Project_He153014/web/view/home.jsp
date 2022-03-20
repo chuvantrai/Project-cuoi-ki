@@ -14,7 +14,6 @@
 <html lang="en">
     <head>
         <%@include file="../client/component/head.jsp" %>
-        
         <%
         
         ArrayList<Tintuc> tintucs = (ArrayList<Tintuc>)request.getAttribute("tintucs");
